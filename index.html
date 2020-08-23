@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>countrys</title>
+
+</head>
+
+<body>
+    <div class="contenar text-center">
+        <form >
+            <div class="mainselection">
+            <label> Country :</label>
+            <select id="Country" onchange="changcity()">
+                <option value="Italy">Italy</option>
+                <option value="indonesia">indonesia</option>
+            </select>
+            </div>
+            <div class="mainselection">
+            <label> City :</label>
+            <select id="cities" onchange="changimg()">
+            </select>
+        </div>
+        </form>
+
+
+    </div>
+    </div>
+    <div class="container-fluid " style="height: 650px; width: 100%;">
+        <div id="displayimg" class="col-lg-12 showing-imag"></div>
+
+    </div>
+
+
+
+
+
+
+
+    
+    <script>
+
+        var Italycities = "<option value=>select city to view </option><option value='Venice'>Venice</option><option value='Milano'>Milano</option>";
+        var indonesiacities = "<option value=>select city to view </option><option value='Bali'>Bali</option><option value='Bandung'>Bandung</option>";
+        var cities = document.getElementById("cities");
+        var country = document.getElementById("Country");
+        var Veniceimg = "<img src=img/0.JPG  width=5% height=20% id=a> <img src=img/00.JPG width=5% height=20% filter=alvha(obacity=50) align=center v =10px h =10px id=a> <img src=img/000.JPG width=5% height=20% id=a>";
+        var Milanoimg = "<img src='img/11.JPG' width=5% height=20%> <img src='img/111.JPG' width=5% height=20% filter=alvha(obacity=50) align=center v =10px h =10px> <img src='img/1111.JPG' width=5% height=20%>";
+        var Baliimg = "<img src='img/7.JPG' width=5% height=20%> <img src='img/77.JPG' width=5% height=20% filter=alvha(obacity=50) align=center v =10px h =10px> <img src='img/777.JPG' width=5% height=20%>";
+        var Bandungimg = "<img src='img/4.JPG' width=5% height=20%> <img src='img/4.JPG' width=5% height=20% filter=alvha(obacity=50) align=center v =10px h =10px> <img src='img/4.JPG' width=5% height=20%>";
+        var imgalery = document.getElementById("displayimg");
+
+
+        function changcity() {
+            if (country.value == "Italy") {
+                cities.innerHTML = Italycities;
+            }
+            else {
+                cities.innerHTML = indonesiacities;
+            }
+        }
+        country.addEventListener("change", changcity());
+        function changimg() {
+            if (cities.value == "Venice") {
+                imgalery.innerHTML = Veniceimg;
+            }
+            else if (cities.value == "Milano") {
+
+
+                imgalery.innerHTML = Milanoimg;
+
+
+            }
+            else if (cities.value == "Bali") {
+
+                imgalery.innerHTML = Baliimg;
+
+
+
+            }
+
+
+            else if (cities.value == "Bandung") {
+
+                imgalery.innerHTML = Bandungimg;
+
+            }
+
+
+            /*  $('#a').keyup(function() {
+  delay(function(){
+    alert('Time elapsed!');
+  }, 1000 );
+});
+*/
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
